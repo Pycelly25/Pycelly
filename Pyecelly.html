@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Página Comemorativa</title>
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+<style>
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('https://cdn.wallpapersafari.com/61/45/zMEaJ9B.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body {
+    text-align: center;
+    background: linear-gradient(45deg, #f3f3f3, #e6e6e6);
+    font-family: "Lucida Sans", "Lucida Grande", sans-serif;
+}
+
+h1 {
+    color: #000000;
+    font-weight: bold;
+    background: rgba(255,255,255,0.7);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#timer {
+    font-size: 2em;
+    margin: 20px;
+    background: rgba(255,255,255,0.7);
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#qrcode {
+    margin: 20px auto;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+audio {
+    margin: 20px;
+}
+
+.carousel {
+    position: relative;
+    max-width: 350px;
+    margin: 30px auto;
+}
+
+.polaroid {
+    background: #fff;
+    padding: 15px;
+    padding-bottom: 60px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+}
+
+.polaroid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.polaroid-caption {
+    text-align: center;
+    margin-top: 10px;
+    font-family: "Courier New", monospace;
+}
+
+.carousel-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.carousel-button {
+    background: rgba(255,255,255,0.7);
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.carousel-button:hover {
+    background: rgba(255,255,255,0.9);
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Pycelly, a grande história.</h1>
+    <div id="timer"></div>
+    <div class="container">
+        <h1>O momento em que meu mundo se iluminou como o céu coberto de lanternas.
+        Onde o amor floresceu e a minha vida ganhou uma nova cor.</h1>
+        
+        <div class="carousel">
+            <div class="polaroid">
+                <img src="sua-foto-1.jpg" alt="Descrição 1" class="active">
+                <p class="polaroid-caption">Legenda da foto 1</p>
+            </div>
+            <div class="carousel-buttons">
+                <button class="carousel-button" onclick="previousImage()">Anterior</button>
+                <button class="carousel-button" onclick="nextImage()">Próxima</button>
+            </div>
+        </div>
+
+        <div id="qrcode"></div>
+        <audio id="music" controls>
+            <source src="https://rr3---sn-bg0e6ned.googlevideo.com/videoplayback?expire=1746077728&ei=wLMSaMX_BZKE6dsPyfSDgAQ&ip=176.6.129.200&id=o-ADyQRBfMOYVq4b0Kdrpa0C-iTUPIb3gTolqwTw88H2Ej&itag=250&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AecWEAYx5GDFU0owlgb9yrLwoQv1n4iIW16_iAKQvQ4mxQ9sVDBSDNJiOXflNFdYoK4xg5CWjJa4p23Z&spc=wk1kZutOzBcMsLRa4b4mIWGhlvWCTn6FgIP3jncg2lpPoJMPFSwQ&vprv=1&svpuc=1&mime=audio%2Fwebm&ns=p3iwh_7EDG5MOzNldL071ngQ&rqh=1&gir=yes&clen=1457286&dur=150.021&lmt=1714739535572467&keepalive=yes&fexp=24350590,24350737,24350827,24350961,24351173,24351176,24351429,24351495,24351528,24351543,24351545,24351594,24351638,24351658,24351662,24351673,24351704,24351757,51331020&c=MWEB&sefc=1&txp=4502434&n=iKQdgCr_C_TfWQ&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRQIhAPPnmvSkkcZpA0zIvUPtuQJprFWhPgejs5yFMXaEQktIAiAecAIv4sRpOiQqOW53FPXb6WKZXEPrCQCVow1vKYdRiw%3D%3D&pot=MnQ-lJ7RhB-Nez6oSIyOavlw5skl4OvlnLFSVk5p8EQzWMcYkMQaPHipFdFmfn6fB7FxeSDKR0jav_CrKe-SVZLPDr2hAe8lupnuKBPbh_DewUh4guixWBKNQlX2_dJVJ_hG0pfPwMcqUZ9PjFV0qKPRnLJo_Q==&title=Geovanna%20Jainy%20-%20Olhos%20castanhos&rm=sn-uxax4vopj5qx-cxgl7s,sn-4g5ey77l&rrc=79,104&req_id=9467d05db092a3ee&rms=rdu,au&redirect_counter=2&cms_redirect=yes&cmsv=e&ipbypass=yes&met=1746056165,&mh=vv&mip=200.142.127.114&mm=29&mn=sn-bg0e6ned&ms=rdu&mt=1746055168&mv=u&mvi=3&pl=22&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=ACuhMU0wRQIhAPQzYHWRtFz4gyNiOWwDJJYhWSZ1mtdd9AspDso3ZWtVAiBy3mcJ5_kbDg3sSJvtyHL9liJcRBNNuEekaHOrYwTAkA%3D%3D">
+        </audio>
+    </div>
+</div>
+
+<script>
+// Gerar QR Code
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+    text: "Sua mensagem aqui",
+    width: 128,
+    height: 128
+});
+
+// Contador de tempo
+function updateTimer() {
+    const start = new Date('2019-12-25T15:20:00');
+    const now = new Date();
+    const diff = now - start;
+
+    const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+    const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('timer').innerHTML = `${years} anos, ${days} dias, ${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateTimer, 1000);
+
+// Controle do volume da música
+const audio = document.getElementById('music');
+audio.volume = 0;
+
+audio.addEventListener('play', function() {
+    let vol = 0;
+    const fadeIn = setInterval(() => {
+        if (vol < 1) {
+            vol += 0.01;
+            audio.volume = vol;
+        } else {
+            clearInterval(fadeIn);
+        }
+    }, 200);
+});
+
+let currentImageIndex = 0;
+const images = [
+    {src: "https://i.ibb.co/V0spYc6y/1.jpg", caption: "Onde tudo começou"},
+    {src: "https://i.ibb.co/xKZq2rYW/2.jpg", caption: "O dia em que decretei passar o resto da minha vida ao seu lado"},
+    {src: "https://i.ibb.co/VYpTSWxd/3.jpg", caption: "e você disse sim!"},
+    {src: "https://i.ibb.co/35tqrfHy/4.jpg", caption: "E meu sorriso se tornou mais leve"},
+    {src: "https://i.ibb.co/67CCNXkc/5.jpg", caption: "e sem dúvida mais feliz!"},
+    {src: "https://i.ibb.co/3yRhbdQR/6.jpg", caption: "e com um beijinho maravilhoso"},
+    {src: "https://i.ibb.co/LXh2RKg5/7.jpg", caption: "Realizado não só o sonho de ver o show da minha banda favorita"},
+    {src: "https://i.ibb.co/N6fFhP7v/8.jpg", caption: "mas com toda certeza de ter você ao meu lado!"},
+    {src: "https://i.ibb.co/mnhPnc1/9.jpg", caption: "e pode realizar os seus sonhos!"},
+    {src: "https://i.ibb.co/hFFXcTc9/10.jpg", caption: "e com todo o amor do mundo"},
+    {src: "https://i.ibb.co/84NTdZYj/12.jpg", caption: "Construir um lar"},
+    {src: "https://i.ibb.co/DHRD5VfL/13.jpg", caption: "ao seu lado e ser feliz"},
+    {src: "https://i.ibb.co/NdyKv2cW/14.jpg", caption: "EU TE AMO mulher da minha vida!"}
+];
+
+function updateImage() {
+    const polaroid = document.querySelector('.polaroid');
+    const img = polaroid.querySelector('img');
+    const caption = polaroid.querySelector('.polaroid-caption');
+    
+    img.src = images[currentImageIndex].src;
+    caption.textContent = images[currentImageIndex].caption;
+}
+
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    updateImage();
+}
+
+function previousImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    updateImage();
+}
+</script>
+<div class="bg-image"></div>
+</body>
+</html>
